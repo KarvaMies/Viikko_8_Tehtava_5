@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DF8DAA"
+    android:foregroundTint="#2B2B2B"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/getReceipt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#B83A08"
+        android:text="Print Receipt"
+        app:layout_constraintBottom_toBottomOf="@+id/buyBottle"
+        app:layout_constraintEnd_toStartOf="@+id/buyBottle"
+        app:layout_constraintHorizontal_bias="0.261"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/buyBottle"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <TextView
+        android:id="@+id/BottleDispenser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="Bottle Dispenser"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01" />
+
+    <TextView
+        android:id="@+id/Output"
+        android:layout_width="340dp"
+        android:layout_height="200dp"
+        android:background="#272222"
+        android:fontFamily="serif-monospace"
+        android:textAlignment="center"
+        android:textColor="#C1B4B4"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BottleDispenser"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <Button
+        android:id="@+id/addMoney"
+        android:layout_width="150dp"
+        android:layout_height="49dp"
+        android:backgroundTint="#B83A08"
+        android:text="Add Money"
+        app:layout_constraintBottom_toBottomOf="@+id/returnMoney"
+        app:layout_constraintEnd_toEndOf="@+id/buyBottle"
+        app:layout_constraintTop_toTopOf="@+id/returnMoney" />
+
+    <Button
+        android:id="@+id/returnMoney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#B83A08"
+        android:text="Return Money"
+        app:layout_constraintBottom_toTopOf="@+id/Output"
+        app:layout_constraintEnd_toStartOf="@+id/addMoney"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BottleDispenser"
+        app:layout_constraintVertical_bias="0.08" />
+
+    <Button
+        android:id="@+id/buyBottle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#B83A08"
+        android:text="Buy Bottle"
+        app:layout_constraintBottom_toTopOf="@+id/Output"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.90"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BottleDispenser"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <TextView
+        android:id="@+id/balance"
+        android:layout_width="124dp"
+        android:layout_height="40dp"
+        android:background="#272222"
+        android:fontFamily="monospace"
+        android:text="00,00€"
+        android:textAlignment="center"
+        android:textColor="#C1B4B4"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/buyBottle"
+        app:layout_constraintEnd_toEndOf="@+id/addMoney"
+        app:layout_constraintStart_toStartOf="@+id/addMoney"
+        app:layout_constraintTop_toBottomOf="@+id/addMoney"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <TextView
+        android:id="@+id/moneyList"
+        android:layout_width="380dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="90dp"
+        android:background="#272222"
+        android:fontFamily="monospace"
+        android:text="  0,05€    0,10€    0,20€    0,50€    1,00€    2,00€"
+        android:textAlignment="viewStart"
+        android:textColor="#C1B4B4"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/Output"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BottleDispenser"
+        app:layout_constraintVertical_bias="0.48000002" />
+
+    <SeekBar
+        android:id="@+id/moneyCount"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="370dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="80dp"
+        android:max="5"
+        android:progress="4"
+        android:progressBackgroundTint="#C1B4B4"
+        android:progressTint="#C1B4B4"
+        android:secondaryProgressTint="#C1B4B4"
+        android:thumbTint="#C1B4B4"
+        app:layout_constraintBottom_toTopOf="@+id/Output"
+        app:layout_constraintEnd_toEndOf="@+id/moneyList"
+        app:layout_constraintStart_toStartOf="@+id/moneyList"
+        app:layout_constraintTop_toBottomOf="@+id/BottleDispenser" />
+
+    <Spinner
+        android:id="@+id/list"
+        android:layout_width="260dp"
+        android:layout_height="33dp"
+        android:background="#C1B4B4"
+        android:dropDownSelector="#C1B4B4"
+        app:layout_constraintBottom_toTopOf="@+id/Output"
+        app:layout_constraintEnd_toEndOf="@+id/moneyList"
+        app:layout_constraintStart_toStartOf="@+id/moneyList"
+        app:layout_constraintTop_toBottomOf="@+id/returnMoney" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
